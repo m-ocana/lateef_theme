@@ -39,6 +39,10 @@ if ( ! function_exists( 'lateef_setup' ) ) {
     // Enable featured image
     add_theme_support( 'post-thumbnails' );
 
+    set_post_thumbnail_size( 150, 150, true );
+    add_image_size( 'medium', 470, 310, true );
+    //add_image_size( 'large', 200, 200, true );
+
     // Enable post format support
     add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
 
