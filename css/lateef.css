@@ -88,7 +88,7 @@ html {
     top: 8px;
     transition-property: transform, opacity;
     transition-timing-function: ease;
-    transition-duration: 0.2s; }
+    transition-duration: 0.5s; }
   .hamburger--slider-r .hamburger-inner::after {
     top: 16px; }
 
@@ -125,6 +125,9 @@ html {
     transform: rotate(-90deg);
     transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
     background-color: white; }
+
+.scroll-block {
+  overflow: hidden; }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0px;
@@ -205,6 +208,12 @@ header {
     text-decoration: none;
     color: black; }
 
+.logo.is-active a {
+  position: relative;
+  z-index: 100;
+  color: white;
+  transition: color 0.7s ease-in 0s; }
+
 .menu {
   margin-left: 85.69405%; }
 
@@ -226,9 +235,9 @@ header {
   .articles article .meta {
     color: #A29EA2;
     margin-top: 6px; }
-    .articles article .meta .tag {
+    .articles article .meta a {
       color: #A29EA2; }
-      .articles article .meta .tag:hover {
+      .articles article .meta a:hover {
         color: #616569;
         transition: color 0.3s ease-in-out; }
 
@@ -236,8 +245,7 @@ header {
   text-decoration: none; }
   .articles article a h1 {
     margin-top: 18px;
-    margin-bottom: 9px;
-    font-weight: 400; }
+    margin-bottom: 9px; }
   .articles article a:hover h1 {
     color: #616569;
     transition: color 0.3s ease-in-out; }
@@ -341,11 +349,11 @@ footer {
     font-size: 2.4375em; }
   .overlay.is-active {
     opacity: 0;
-    animation: fadeIn .1s ease-in 1 forwards;
+    animation: fadeIn .4s ease-in 1 forwards;
     display: block; }
   .overlay.is-inactive {
     opacity: 1;
-    animation: fadeOut .1s ease-out 1 forwards; }
+    animation: fadeOut .4s ease-out 1 forwards; }
   .overlay.hidden {
     display: none; }
   .overlay .topics li:first-child, .overlay .social li:first-child {
@@ -374,11 +382,13 @@ footer {
   .hero .hero-overlay {
     width: 100%;
     background: rgba(0, 0, 0, 0.3); }
-  .hero h1 {
+  .hero .hero-title {
+    text-align: center;
+    padding: 9px 0;
     color: white;
     font-size: 2.1875em; }
     @media screen and (min-width: 48em) {
-      .hero h1 {
+      .hero .hero-title {
         font-size: 2.8125em; } }
   .hero .topic {
     color: white;
@@ -413,14 +423,6 @@ footer {
     @media screen and (min-width: 48em) {
       .hero .hero-wrapper {
         min-height: 500px; } }
-    .hero .hero-wrapper .hero-title {
-      text-align: center; }
-
-.logo.is-active a {
-  position: relative;
-  z-index: 100;
-  color: white;
-  transition: 0.2s linear 0s; }
 
 .read-more {
   background: black;
@@ -431,6 +433,9 @@ footer {
   display: inline-block;
   margin-top: 18px;
   background: #DFE0DB; }
+
+button {
+  outline: none; }
 
 .social-widget {
   margin: 30px 0;
@@ -488,22 +493,22 @@ footer {
         width: 31.44476%; }
         .related-articles .related-article:last-child {
           margin-right: 0; } }
-    .related-articles .related-article img {
+    .related-articles .related-article .related-article-img {
       float: left;
       display: block;
       margin-right: 2.83286%;
       width: 31.44476%;
       width: 80px;
       height: auto; }
-      .related-articles .related-article img:last-child {
+      .related-articles .related-article .related-article-img:last-child {
         margin-right: 0; }
       @media screen and (min-width: 48em) {
-        .related-articles .related-article img {
+        .related-articles .related-article .related-article-img {
           float: left;
           display: block;
           margin-right: 2.83286%;
           width: 100%; }
-          .related-articles .related-article img:last-child {
+          .related-articles .related-article .related-article-img:last-child {
             margin-right: 0; } }
     .related-articles .related-article .related-article-meta {
       float: left;
@@ -533,7 +538,7 @@ footer {
           color: #616569; }
         @media screen and (min-width: 48em) {
           .related-articles .related-article .related-article-meta .related-article-title {
-            font-size: 30px;
+            font-size: 24px;
             font-weight: 100; } }
         .related-articles .related-article .related-article-meta .related-article-title a {
           text-decoration: none; }

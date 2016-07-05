@@ -16,7 +16,7 @@
         <script>
             
             (function(){
-                
+                var body = document.querySelector("body");
                 var hamburger = document.querySelector(".hamburger");
                 var overlayMenu = document.querySelector(".overlay");
                 var logo = document.querySelector(".logo");
@@ -24,16 +24,17 @@
                 var toggleNavigation = function () {
                     // Toggle Hamburger class "is-active"
                     hamburger.classList.toggle("is-active");
+                    // Fix background scroll issue
+                    body.classList.toggle("scroll-block");
                     // Open/Close menu
                     overlayMenu.classList.toggle("is-active");
                     overlayMenu.classList.toggle("is-inactive");
-                    // Hiding overlay with 0.5s delay
                     
+                    // Hiding overlay with 0.5s delay
                       setTimeout(function(){
                     
                         overlayMenu.classList.toggle("hidden");
                     }, 500);
-                    
 
                     // Highlight logo
                     logo.classList.toggle("is-active");            

@@ -25,6 +25,8 @@
 
         </div>
 
+        <?php comments_template(); ?>
+
     </div>
     <!-- Main container ends here -->
 
