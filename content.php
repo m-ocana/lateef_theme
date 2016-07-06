@@ -6,5 +6,5 @@
                 the_post_thumbnail('medium');
         	endif; ?>
     </a>
-    <p class="meta"><span class="tag"><?php echo the_category(', '); ?></span> | <?php the_date(); ?></p>
+    <p class="meta"><?php echo the_category(', '); ?> | <?php the_date(); ?></p>
 </article>
